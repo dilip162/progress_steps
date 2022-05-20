@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Multi step form</title>
+    <link rel="stylesheet" href="/CSS/multistepform.css">
+    <script src="/JavaScript/mutistepform.js"></script>
+</head>
+
+<body>
+    <h1 style="text-align: center;">Enter your Details</h1>
+    <form id="regform" method="POST" name="myform">
+        <div class="tab" id="tab1" style="display: block;">
+            <h2>Name</h2>
+            <p><input type="text" placeholder="First Name" name="ffirst" required></p>
+            <p><input type="text" placeholder="Last Name" name="flast" required></p>
+            <div style="overflow: auto;">
+                <div style="float: right;">
+
+
+                    <button type="button" id="nextBtn" onclick="steps('tab1')">Next</button>
+                </div>
+            </div>
+        </div>
+        <div class="tab" id="tab2" style="display: none;">
+            <h2>contact info</h2>
+            <p><input type="tel" placeholder="Enter your phone No." name="ftel" required></p>
+            <p><input type="email" id="email" placeholder="Enter your Email ID" name="femail" required></p>
+            <div style="overflow: auto;">
+                <div style="float: right;">
+
+                    <button type="button" id="prevBtn" onclick="prev('tab2')">Previous</button>
+                    <button type="button" id="nextBtn" onclick="steps('tab2')">Next</button>
+                </div>
+            </div>
+        </div>
+        <div class="tab" id="tab3" style="display: none;">
+            <h2>Birthday</h2>
+            <p><input placeholder="dd" name="fbirth" type="date"></p>
+            <div style="overflow: auto;">
+                <div style="float: right;">
+
+                    <button type="button" id="prevBtn" onclick="prev('tab3')">Previous</button>
+                    <button type="button" id="nextBtn" onclick="steps('tab3')">Next</button>
+                </div>
+            </div>
+        </div>
+        <div class="tab" id="tab4" style="display: none;">
+            <h2>Login info</h2>
+            <p><input type="text" name="" id="" placeholder="Enter Username" name="fusername" required></p>
+            <p><input type="password" name="" id='new_password' placeholder="Enter password" name="fpassword" required>
+            </p>
+            <div style="overflow: auto;">
+                <div style="float: right;">
+
+                    <!-- <button type="button" id="prevBtn" onclick="steps('tab3')">Previous</button> -->
+                    <button type="button" id="prevBtn" onclick="prev('tab4')">Previous</button>
+
+                    <button type="submit" id="nextBtn" onclick="userAction();">Submit</button>
+                </div>
+            </div>
+        </div>
+
+
+
+        <div class="stepsbutton">
+            <span class="step"></span>
+            <span class="step"></span>
+            <span class="step"></span>
+            <span class="step"></span>
+        </div>
+    </form>
+
+</body>
+
+</html>
